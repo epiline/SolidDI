@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1F0DEDAB27592DBC00B25B4B /* InjectionLesson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0DEDA227592DBC00B25B4B /* InjectionLesson.framework */; };
-		1F0DEDB027592DBC00B25B4B /* InjectionLessonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DEDAF27592DBC00B25B4B /* InjectionLessonTests.swift */; };
+		1F0DEDB027592DBC00B25B4B /* InjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DEDAF27592DBC00B25B4B /* InjectionTests.swift */; };
 		1F0DEDB127592DBC00B25B4B /* InjectionLesson.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0DEDA527592DBC00B25B4B /* InjectionLesson.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F0DEDD5275933FA00B25B4B /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DEDD4275933FA00B25B4B /* DIContainer.swift */; };
-		1F0DEDD72759365700B25B4B /* InjectPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DEDD62759365700B25B4B /* InjectPropertyWrapper.swift */; };
+		1F0DEDD72759365700B25B4B /* ResolvePropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DEDD62759365700B25B4B /* ResolvePropertyWrapper.swift */; };
+		1FCB86A1275A9AF900BF367C /* DependenciesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB86A0275A9AF900BF367C /* DependenciesStore.swift */; };
+		1FCB86A3275A9BEF00BF367C /* DependencyReferenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB86A2275A9BEF00BF367C /* DependencyReferenceProtocol.swift */; };
+		1FCB86A6275A9C8000BF367C /* WeakDependencyReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB86A5275A9C8000BF367C /* WeakDependencyReference.swift */; };
+		1FCB86A8275A9C9B00BF367C /* StrongDependencyReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB86A7275A9C9B00BF367C /* StrongDependencyReference.swift */; };
+		1FCB86AC275AAA1D00BF367C /* DependecyReferenceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB86AB275AAA1D00BF367C /* DependecyReferenceConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +33,14 @@
 		1F0DEDA227592DBC00B25B4B /* InjectionLesson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InjectionLesson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0DEDA527592DBC00B25B4B /* InjectionLesson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InjectionLesson.h; sourceTree = "<group>"; };
 		1F0DEDAA27592DBC00B25B4B /* InjectionLessonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InjectionLessonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F0DEDAF27592DBC00B25B4B /* InjectionLessonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionLessonTests.swift; sourceTree = "<group>"; };
+		1F0DEDAF27592DBC00B25B4B /* InjectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionTests.swift; sourceTree = "<group>"; };
 		1F0DEDD4275933FA00B25B4B /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
-		1F0DEDD62759365700B25B4B /* InjectPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectPropertyWrapper.swift; sourceTree = "<group>"; };
+		1F0DEDD62759365700B25B4B /* ResolvePropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolvePropertyWrapper.swift; sourceTree = "<group>"; };
+		1FCB86A0275A9AF900BF367C /* DependenciesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesStore.swift; sourceTree = "<group>"; };
+		1FCB86A2275A9BEF00BF367C /* DependencyReferenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyReferenceProtocol.swift; sourceTree = "<group>"; };
+		1FCB86A5275A9C8000BF367C /* WeakDependencyReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakDependencyReference.swift; sourceTree = "<group>"; };
+		1FCB86A7275A9C9B00BF367C /* StrongDependencyReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongDependencyReference.swift; sourceTree = "<group>"; };
+		1FCB86AB275AAA1D00BF367C /* DependecyReferenceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependecyReferenceConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0DEDA427592DBC00B25B4B /* InjectionLesson */,
-				1F0DEDAE27592DBC00B25B4B /* InjectionLessonTests */,
+				1F0DEDAE27592DBC00B25B4B /* InjectionTests */,
 				1F0DEDA327592DBC00B25B4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,18 +84,55 @@
 			isa = PBXGroup;
 			children = (
 				1F0DEDA527592DBC00B25B4B /* InjectionLesson.h */,
-				1F0DEDD4275933FA00B25B4B /* DIContainer.swift */,
-				1F0DEDD62759365700B25B4B /* InjectPropertyWrapper.swift */,
+				1F645E29275A6F120042BA4B /* Core */,
+				1F0DEDD62759365700B25B4B /* ResolvePropertyWrapper.swift */,
 			);
 			path = InjectionLesson;
 			sourceTree = "<group>";
 		};
-		1F0DEDAE27592DBC00B25B4B /* InjectionLessonTests */ = {
+		1F0DEDAE27592DBC00B25B4B /* InjectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				1F0DEDAF27592DBC00B25B4B /* InjectionLessonTests.swift */,
+				1F0DEDAF27592DBC00B25B4B /* InjectionTests.swift */,
 			);
-			path = InjectionLessonTests;
+			path = InjectionTests;
+			sourceTree = "<group>";
+		};
+		1F645E29275A6F120042BA4B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1F0DEDD4275933FA00B25B4B /* DIContainer.swift */,
+				1FCB86AD275AAE2500BF367C /* Container */,
+				1F645E2C275A6F7A0042BA4B /* Dependency */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1F645E2C275A6F7A0042BA4B /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				1FCB86A4275A9C4A00BF367C /* DependencyReference */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		1FCB86A4275A9C4A00BF367C /* DependencyReference */ = {
+			isa = PBXGroup;
+			children = (
+				1FCB86A2275A9BEF00BF367C /* DependencyReferenceProtocol.swift */,
+				1FCB86A5275A9C8000BF367C /* WeakDependencyReference.swift */,
+				1FCB86A7275A9C9B00BF367C /* StrongDependencyReference.swift */,
+			);
+			path = DependencyReference;
+			sourceTree = "<group>";
+		};
+		1FCB86AD275AAE2500BF367C /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				1FCB86AB275AAA1D00BF367C /* DependecyReferenceConfigurator.swift */,
+				1FCB86A0275A9AF900BF367C /* DependenciesStore.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCB86A8275A9C9B00BF367C /* StrongDependencyReference.swift in Sources */,
+				1FCB86A3275A9BEF00BF367C /* DependencyReferenceProtocol.swift in Sources */,
+				1FCB86AC275AAA1D00BF367C /* DependecyReferenceConfigurator.swift in Sources */,
 				1F0DEDD5275933FA00B25B4B /* DIContainer.swift in Sources */,
-				1F0DEDD72759365700B25B4B /* InjectPropertyWrapper.swift in Sources */,
+				1F0DEDD72759365700B25B4B /* ResolvePropertyWrapper.swift in Sources */,
+				1FCB86A1275A9AF900BF367C /* DependenciesStore.swift in Sources */,
+				1FCB86A6275A9C8000BF367C /* WeakDependencyReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0DEDB027592DBC00B25B4B /* InjectionLessonTests.swift in Sources */,
+				1F0DEDB027592DBC00B25B4B /* InjectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
