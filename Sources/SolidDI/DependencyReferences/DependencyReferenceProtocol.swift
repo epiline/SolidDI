@@ -1,15 +1,15 @@
 //
-//  DependencyReference.swift
-//  InjectionLesson
+//  DependencyReferenceProtocol.swift
+//  
 //
-//  Created by Женя on 03.12.2021.
+//  Created by Баян Евгений Вячеславович on 17.04.2022.
 //
 
 import Foundation
 
 public protocol DependencyReferenceProtocol: AnyObject {
-    
+
     var dependency: AnyObject? { get }
-    
+
     init(_ dependency: AnyObject)
 }
