@@ -1,24 +1,29 @@
-# Basic Dependecy Injection
-Simple solution for DI
+# SolidDI
+Simple solution for DIC
 
 # Dependecy registration
-Registration strong dependency
+Single dependency registration
 
-<img width="561" alt="image" src="https://user-images.githubusercontent.com/30548311/144685370-3af146bc-9944-4577-ac0f-a956d90b64bc.png">
+<img width="338" alt="Снимок экрана 2022-04-21 в 02 06 17" src="https://user-images.githubusercontent.com/30548311/164339037-0be03b5b-ef37-4740-a26e-4096a88bb173.png">
 
-Registration weak dependency
+Lazy single dependency registration
 
-<img width="545" alt="Снимок экрана 2021-12-04 в 02 24 55" src="https://user-images.githubusercontent.com/30548311/144685468-f3c38692-6f56-46e4-9f29-af8c71626c03.png">
+<img width="359" alt="Снимок экрана 2022-04-21 в 02 09 44" src="https://user-images.githubusercontent.com/30548311/164339322-02ebce05-0cb7-4e58-b759-1e12674012ac.png">
 
-Registration with factory closure
+Weak dependency registration
 
-<img width="442" alt="image" src="https://user-images.githubusercontent.com/30548311/144686384-c2ce1b2f-360f-4153-a42b-8315f6cb4d77.png">
+<img width="343" alt="Снимок экрана 2022-04-21 в 02 14 23" src="https://user-images.githubusercontent.com/30548311/164339725-84040471-dd77-4760-b5e9-d65ea6e0b20f.png">
 
-# Dependency injection
-Strong dependency resolving
+# Dependency resolvation
 
-<img width="580" alt="Снимок экрана 2021-12-04 в 02 26 37" src="https://user-images.githubusercontent.com/30548311/144685579-ac2de701-39be-43c6-964a-d3d8e28ac150.png">
+Local DI container
 
-Weak dependency resolving
+<img width="488" alt="Снимок экрана 2022-04-21 в 02 44 58" src="https://user-images.githubusercontent.com/30548311/164342381-903bdbad-7d4a-4ea5-b005-bb44aa1bb40c.png">
 
-<img width="624" alt="image" src="https://user-images.githubusercontent.com/30548311/144685704-1d266635-c8a4-4db0-bb78-78a3c5d006b7.png">
+Global DI container
+
+<img width="493" alt="Снимок экрана 2022-04-21 в 02 46 33" src="https://user-images.githubusercontent.com/30548311/164342500-07dca61f-080a-40ca-8798-7104a94777b7.png">
+
+# Registration/Resolvation graph
+
+<img width="1134" alt="Снимок экрана 2022-04-21 в 02 36 09" src="https://user-images.githubusercontent.com/30548311/164341581-b3434d4d-5b3a-43a1-accf-df9dbc21ca37.png">
