@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DependencyKey<T> {
+internal final class DependencyKey<T> {
 
     public static func create() -> String {
         let typeKey: String = "\(T.self)"

@@ -41,8 +41,7 @@ final public class DependencyConfigurator {
         strongDependencies.set(key: key, dependency: StrongDependencyReference(factory(diContainer)))
     }
 
-    func asWeakRegenerable() {
+    func asWeak() {
         factories.set(key: key, factory: factory)
-        weakDependencies.set(key: key, dependency: WeakDependencyReference(factory(diContainer)))
     }
 }
