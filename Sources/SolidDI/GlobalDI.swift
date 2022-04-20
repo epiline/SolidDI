@@ -1,4 +1,7 @@
-public struct SolidDI { }
+public struct GlobalDI {
+    
+    static let container = DIContainer()
+}
 
 public class DIContainer {
 
@@ -8,13 +11,11 @@ public class DIContainer {
 
     private let weakDependencies = WeakDependenciesStore()
 
-    public func register<P>(_ as: P.Type, factory: @escaping InitializationFactory) -> Last {
-        let key = DependencyKey<P>.create()
-
-        return Last(
-            key: key,
-            factory: factory,
+    public func register<P>(_ as: P.Type, factory: @escaping InitializationFactory) -> DependencyConfigurator {
+        return .init(
             diContainer: self,
+            key: DependencyKey<P>.create(),
+            factory: factory,
             factories: factories,
             strongDependencies: strongDependencies,
             weakDependencies: weakDependencies
@@ -52,7 +53,6 @@ public class DIContainer {
     }
 
     private func weakResolvation<D>(key: String, reference: DependencyReferenceProtocol) -> D {
-
         // If deadlocated then return nil
         guard let someDependency = reference.dependency else {
             guard let factory = factories.get(key: key) else {
@@ -79,46 +79,6 @@ public class DIContainer {
         }
 
         return dependency
-    }
-}
-
-public class Last {
-
-    private let key: String
-
-    private let factory: InitializationFactory
-
-    private let diContainer: DIContainer
-
-    private let factories: FactoriesStore
-
-    private let strongDependencies: StrongDependenciesStore
-
-    private let weakDependencies: WeakDependenciesStore
-
-    init(
-        key: String,
-        factory: @escaping InitializationFactory,
-        diContainer: DIContainer,
-        factories: FactoriesStore,
-        strongDependencies: StrongDependenciesStore,
-        weakDependencies: WeakDependenciesStore
-    ) {
-        self.key = key
-        self.factory = factory
-        self.diContainer = diContainer
-        self.factories = factories
-        self.strongDependencies = strongDependencies
-        self.weakDependencies = weakDependencies
-    }
-
-    func asSingleton() {
-        strongDependencies.set(key: key, dependency: StrongDependencyReference(factory(diContainer)))
-    }
-
-    func asWeakRegenerable() {
-        factories.set(key: key, factory: factory)
-        weakDependencies.set(key: key, dependency: WeakDependencyReference(factory(diContainer)))
     }
 }
 

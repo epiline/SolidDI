@@ -91,10 +91,20 @@ final class SolidDITests: XCTestCase {
             ComputerMock(ram: di.resolve())
         }.asWeakRegenerable()
 
-        let computer: ComputerProtocolMock = di.resolve()
-        let ram: RAM = di.resolve()
+        let computer: ComputerProtocolMock? = di.resolve()
+        let ram: RAM? = di.resolve()
 
-        XCTAssertNotNil(computer.ram)
+        XCTAssertNotNil(ram)
+        XCTAssertNotNil(computer?.ram)
+    }
+    
+    func testPropertyWrapper() {
+        di.register(RAM.self) { _ in
+            RAM()
+        }.asWeakRegenerable()
+        
+        @Resolve(container: di) var ram: RAM?
+        
         XCTAssertNotNil(ram)
     }
 }

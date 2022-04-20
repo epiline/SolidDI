@@ -7,4 +7,5 @@
 
 import Foundation
 
+/// Factory closure for object initialization
 public typealias InitializationFactory = (DIContainer) -> AnyObject
