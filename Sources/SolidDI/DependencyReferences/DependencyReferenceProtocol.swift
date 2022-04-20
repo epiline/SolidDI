@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol DependencyReferenceProtocol: AnyObject {
+internal protocol DependencyReferenceProtocol: AnyObject {
 
     var dependency: AnyObject? { get }
 

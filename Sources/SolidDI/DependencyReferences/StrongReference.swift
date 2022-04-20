@@ -1,5 +1,5 @@
 //
-//  StrongDependencyReference.swift
+//  StrongReference.swift
 //  
 //
 //  Created by Баян Евгений Вячеславович on 17.04.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final public class StrongDependencyReference: DependencyReferenceProtocol {
+final public class StrongReference: DependencyReferenceProtocol {
 
     private var strongReferenceDependency: AnyObject?
 
@@ -16,6 +16,6 @@ final public class StrongDependencyReference: DependencyReferenceProtocol {
     }
 
     public init(_ dependency: AnyObject) {
-        self.strongReferenceDependency = dependency
+        strongReferenceDependency = dependency
     }
 }

@@ -1,5 +1,5 @@
 //
-//  WeakDependencyReference.swift
+//  WeakReference.swift
 //  
 //
 //  Created by Баян Евгений Вячеславович on 17.04.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final public class WeakDependencyReference: DependencyReferenceProtocol {
+final public class WeakReference: DependencyReferenceProtocol {
 
     private weak var weakReferenceDependency: AnyObject?
 
@@ -16,6 +16,6 @@ final public class WeakDependencyReference: DependencyReferenceProtocol {
     }
 
     public init(_ dependency: AnyObject) {
-        self.weakReferenceDependency = dependency
+        weakReferenceDependency = dependency
     }
 }
