@@ -1,11 +1,9 @@
 # SolidDI
 Simple solution for DIC
 
-<img width="854" alt="Снимок экрана 2022-04-21 в 03 06 48" src="https://user-images.githubusercontent.com/30548311/164344209-25610e67-7d3c-4606-8e42-64acee0cd5c9.png">
-
 # Dependecy registration
 
-Single dependency registration
+### Single dependency
 
 ```swift
 
@@ -17,7 +15,7 @@ diContainer
 
 ```
 
-Lazy single dependency registration
+### Lazy single dependency
 
 ```swift
 
@@ -29,7 +27,7 @@ diContainer
 
 ```
 
-Weak dependency registration
+### Weak dependency
 
 ```swift
 
@@ -43,7 +41,7 @@ diContainer
 
 # Dependency resolvation
 
-Local DI container
+### Local DI container
 
 ```swift
 
@@ -61,7 +59,7 @@ let decoder1: XMLDecodable = diContainer.resolve()
 
 ```
 
-Global DI container
+### Global DI container
 
 ```swift
 
@@ -88,4 +86,6 @@ let decoder1: XMLDecodable = GlobalDI.container.resolve()
 managing the distribution of Swift code. It’s integrated with the Swift build
 system to automate the process of downloading, compiling, and linking
 dependencies on all platforms.
+
+<img width="854" alt="Снимок экрана 2022-04-21 в 03 06 48" src="https://user-images.githubusercontent.com/30548311/164344209-25610e67-7d3c-4606-8e42-64acee0cd5c9.png">
 
