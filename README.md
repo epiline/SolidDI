@@ -1,29 +1,91 @@
 # SolidDI
 Simple solution for DIC
 
+<img width="854" alt="Снимок экрана 2022-04-21 в 03 06 48" src="https://user-images.githubusercontent.com/30548311/164344209-25610e67-7d3c-4606-8e42-64acee0cd5c9.png">
+
 # Dependecy registration
+
 Single dependency registration
 
-<img width="338" alt="Снимок экрана 2022-04-21 в 02 06 17" src="https://user-images.githubusercontent.com/30548311/164339037-0be03b5b-ef37-4740-a26e-4096a88bb173.png">
+```swift
+
+diContainer
+    .register(XMLDecodable.self) { _ in
+        return XMLDecoder()
+    }
+    .asSingleton()
+
+```
 
 Lazy single dependency registration
 
-<img width="359" alt="Снимок экрана 2022-04-21 в 02 09 44" src="https://user-images.githubusercontent.com/30548311/164339322-02ebce05-0cb7-4e58-b759-1e12674012ac.png">
+```swift
+
+diContainer
+    .register(ErrorLoggable.self) { _ in
+        return LocalErrorLogger()
+    }
+    .asLazySingleton()
+
+```
 
 Weak dependency registration
 
-<img width="343" alt="Снимок экрана 2022-04-21 в 02 14 23" src="https://user-images.githubusercontent.com/30548311/164339725-84040471-dd77-4760-b5e9-d65ea6e0b20f.png">
+```swift
+
+diContainer
+    .register(XMLValidator.self) { _ in
+        return XMLValidator()
+    }
+    .asWeak()
+
+```
 
 # Dependency resolvation
 
 Local DI container
 
-<img width="488" alt="Снимок экрана 2022-04-21 в 02 44 58" src="https://user-images.githubusercontent.com/30548311/164342381-903bdbad-7d4a-4ea5-b005-bb44aa1bb40c.png">
+```swift
+
+let diContainer = DIContainer()
+
+diContainer
+    .register(XMLDecodable.self) { _ in
+        return XMLDecoder()
+    }
+    .asLazySingleton()
+
+let decoder1: XMLDecodable = diContainer.resolve()
+// or
+@Resolve(container: diContainer) var decoder2: XMLDecodable
+
+```
 
 Global DI container
 
-<img width="493" alt="Снимок экрана 2022-04-21 в 02 46 33" src="https://user-images.githubusercontent.com/30548311/164342500-07dca61f-080a-40ca-8798-7104a94777b7.png">
+```swift
+
+GlobalDI
+    .container
+    .register(XMLDecodable.self) { _ in
+        return XMLDecoder()
+    }
+    .asLazySingleton()
+
+let decoder1: XMLDecodable = GlobalDI.container.resolve()
+// or
+@Resolve var decoder2: XMLDecodable
+
+```
 
 # Registration/Resolvation graph
 
 <img width="1134" alt="Снимок экрана 2022-04-21 в 02 36 09" src="https://user-images.githubusercontent.com/30548311/164341581-b3434d4d-5b3a-43a1-accf-df9dbc21ca37.png">
+
+# Swift Package Manager
+                                                       
+[Swift Package Manager](https://swift.org/package-manager/) is a tool for 
+managing the distribution of Swift code. It’s integrated with the Swift build
+system to automate the process of downloading, compiling, and linking
+dependencies on all platforms.
+
